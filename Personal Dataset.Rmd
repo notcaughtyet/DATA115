@@ -1,0 +1,42 @@
+---
+title: "Personal Dataset"
+author: "Grace Okamoto"
+date: "12/4/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+I have already checked the data for any required cleaning, and I have de-concatenated keywords into separate sheets. Let's load those sheets in with the original data.
+```{r load}
+CSRIC <- read.csv("CSRIC_Best_Practices.csv")
+NT <- read.csv("Network Types.csv")
+IR <- read.csv("Industry Roles.csv")
+Keyword <- read.csv("Keywords.csv")
+KC <- read.csv("Keyword Count.csv")
+KP <- read.csv("Keywords Priority.csv")
+TKP <- read.csv("Top Keyword Priority.csv")
+library(ggplot2)
+```
+Let's summarize some of these tables:
+```{r summary}
+summary(NT)
+summary(IR)
+summary(Keyword)
+```
+Well that's quite the mess so instead let's make a barplot to display the most frequently mentioned keywords. I converted the Keywords file to a pivot table in Excel to count the number of keywords. Then I gave the same treatment to the keywords, but this time calculated an average of their priority instead. Some keywords don't have enough occurences to accurately calculate their average priority, so then I redrew the plots while omitting any keywords with less than 10 occurences.
+```{r barplot}
+ggKC <- ggplot(data = KC, mapping = aes(x=ï..Keywords,y=Count)) + 
+  geom_col()
+ggKC +  coord_flip()
+
+ggKP <- ggplot(data = KP, mapping = aes(x=ï..Keywords,y=Average.Priority)) + 
+  geom_col()
+ggKP +  coord_flip()
+
+ggTKP <- ggplot(data = TKP, mapping = aes(x=ï..Keywords,y=Average.Priority)) + 
+  geom_col()
+ggTKP +  coord_flip()
+```
