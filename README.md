@@ -19,4 +19,4 @@ Then I repeated the process, but this time calculated an average of their priori
 
 Some keywords don't have enough occurences to accurately calculate their average priority, so then I redrew the plots while omitting any keywords with less than 10 occurences.
 
-![Keyword barchart by priority -- top occurrences only](https://github.com/notcaughtyet/DATA115/blob/main/Keyword%20Priority.png)
+![Keyword barchart by priority -- top occurrences only](https://github.com/notcaughtyet/DATA115/blob/main/Top%20Keyword%20Priority.png)
