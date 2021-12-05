@@ -3,8 +3,6 @@ DATA115 Personal Data Set
 
 The purpose of this project is to explore and analyze data sets that may contain information regarding how to ensure security and efficiency in communications systems. This is accomplished by analyzing the CSRIC's Best Practices Suggestions dataset in order to extract the most important and frequently-appearing keywords in order to know which areas need to be focused on. I checked the data for any required cleaning, and deconcatenated keywords into separate columns
 
-![CSRIC Best Practices Priority Distribution](https://github.com/notcaughtyet/DATA115/blob/main/00000b.png)
-
 Let's make a barplot to display the most frequently mentioned keywords. I converted the Keywords file to a pivot table in Excel to count the number of keywords.
 
 ![Keywords Pivot Table Count of Occurrences](https://github.com/notcaughtyet/DATA115/blob/main/Keywords%20Count.png)
